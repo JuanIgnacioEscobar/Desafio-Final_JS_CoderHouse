@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(238, 237, 237);
+}
+.buscador{
+    margin-right: 110px;
+}
+.menu{
+    margin-left: 150px;
+}
+.nav-link{
+    color: #fafafa;
+}
+.navbar{
+    background-image: url(../img/imagenNav.jpg);
+    height: 145px;
+}
+.btn-buscador{
+    color: #333333;
+    border: none;
+    background-color: #e0a93b;
+}
+/* logo */
+.logo{
+    border-radius: 50%;
+    width: 170px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+}
+.box-logo{
+    position: relative;
+    bottom: 110px;
+    text-align: center;
+}
+/* submenu */
+.subMenu{
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+.subMenu li{
+    display: inline-block;
+    background: #E0A93B;
+}
+.subMenu a:hover{
+    color: black;
+}
+/* info tienda */
+.info{
+    background-color: #E0E0E0;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 33px;
+}
+.info a{
+    color: #555;
+    text-decoration: none;
+}
+/* card */
+#productos1{
+    margin-top: 30px;
+}
+.titulo-card{
+    text-align: center;
+}
+.comprar{
+    text-align: center;
+    background: #E0A93B;
+    border-color: #fafafa;
+}
+.btn:focus{
+    box-shadow: none;
+}
+.cards-productos{
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin: 25px;
+}
