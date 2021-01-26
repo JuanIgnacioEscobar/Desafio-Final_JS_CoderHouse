@@ -1,11 +1,3 @@
-// let compra1 = 800;
-// let total = 0;
-
-// function Comprar1(){
-//     total = total + compra1;
-//     document.getElementById('carrito').innerHTML = `Compraste body a: <b>$${total}</b>`
-// }
-
 class Producto{
     constructor(nombreProducto, nombreDescripcion, precioProducto, stockProducto, imagenProducto){
         this.nombre = nombreProducto;
