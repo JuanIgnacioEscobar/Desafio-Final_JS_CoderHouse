@@ -74,3 +74,21 @@ body{
     flex-flow: row wrap;
     margin: 25px;
 }
+#btn-carrito{
+    margin-top: 2px;
+    background: none;
+    border: none;
+    color: #fafafa;
+}
+.btn-cerrar{
+    background: red;
+    border: none;
+}
+.btn-vaciar{
+    background: #555;
+    border: none;
+}
+.no-productos{
+    text-decoration: none;
+    color: black;
+}
