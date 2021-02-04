@@ -39,7 +39,12 @@ for(let i = 0; i < baseDeDatos.length; i++) {
                         <br>
                         Precio: <strong>${baseDeDatos[i].precio}</strong></p>
                         <p>Cantidad: <strong>${baseDeDatos[i].stock}</strong></p>
-                    <button class="btn comprar" onclick="agregarProducto(${JSON.stringify(baseDeDatos[i])})">Comprar</button>
+                        <div class="card-footer">
+                        <button class="btn btn-primary" style="width:100%" 
+                        onclick='agregarProducto(${JSON.stringify(
+                        baseDeDatos[i]
+                        )})'>Agregar al carrito</button>
+                        </div>
                 </div>
                 </div> `
     }

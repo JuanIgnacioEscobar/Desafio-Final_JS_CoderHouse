@@ -61,14 +61,19 @@ body{
 .titulo-card{
     text-align: center;
 }
-.comprar{
-    text-align: center;
+.btn-primary{
     background: #E0A93B;
     border-color: #fafafa;
 }
-.btn:focus{
+.btn-primary:focus{
     box-shadow: none;
 }
+.card-footer {
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+    border-top: none;
+}
+
 .cards-productos{
     justify-content: space-around;
     flex-flow: row wrap;
