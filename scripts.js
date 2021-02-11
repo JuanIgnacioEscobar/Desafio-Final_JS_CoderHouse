@@ -16,14 +16,24 @@ class Producto{
     }
 }
 
-let ProductoBodyTiny = new Producto('Body Tiny','Body rayado con cartera y puños a contratono Composición Tejido: jersey rayado 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.', '$800', 10, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213275_aero-900x900.jpg')
-let ProductoBodyVeggie = new Producto('Body Veggie','Body estampado por metro "verduras" sobre jersey con puños en color.Composición Tejido: jersey estampado por metro 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.', '$700', 3,'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213200_kaki-400x400.jpg')
-let productoPantVeggie = new Producto('Pantalon Veggie', 'Mini babucha con puños, ideal para medio tiempo. Composición Tejido: reeb 24/1, 100% algodón', '$700', 20, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213209_kaki-900x900.jpg')
+let ProductoBodyTiny = new Producto('Body Tiny','Body rayado con cartera y puños a contratono Composición Tejido: jersey rayado 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.', 800, 10, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213275_aero-900x900.jpg')
+let ProductoBodyVeggie = new Producto('Body Veggie','Body estampado por metro "verduras" sobre jersey con puños en color.Composición Tejido: jersey estampado por metro 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.', 700, 3,'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213200_kaki-400x400.jpg')
+let productoPantVeggie = new Producto('Pantalon Veggie', 'Mini babucha con puños, ideal para medio tiempo. Composición Tejido: reeb 24/1, 100% algodón', 700, 20, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213209_kaki-900x900.jpg')
+let productoBuzoLuan = new Producto('Buzo Luan', 'Buzo de rustico, combinado, con capucha forrada cuello con cartera y broches, ideal para medio tiempo, super cancheros. Composición Tejido: rustico color 100% algodón.', 1000, 12, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211804_kaki-900x900.jpg')
+let productoJoggerTiny = new Producto('Jogger Tiny', 'Jogger towel con alforzas, bolsillos y puños. Composición Tejido: towell, 100% algodón', 800, 20, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211904_verde-900x900.jpg')
+let productoRemeraLuan = new Producto('Remera Luan', 'Remera con puños a contratono, con gran estampa. Composición Tejido: jersey color 100% algodón.', 700, 15, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213262_verde-900x900.jpg')
+let productoBaberoBeni = new Producto('Babero Beni', 'Babero de algodón estampado con colareta a contra tono.', 500, 5, 'https://tienda.pachibebes.com/image/cache/catalog/2020/Invierno/205606_verde-900x900.jpg')
+let productoSaquitoVeggie = new Producto('Saquito Veggie', 'Mini saquito estampado verduras por metro sobre jersey con capucha forrada.', 900, 11, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213202_kaki-900x900.jpg')
 
 let baseDeDatos = [];
 baseDeDatos.push(ProductoBodyTiny);
 baseDeDatos.push(ProductoBodyVeggie);
 baseDeDatos.push(productoPantVeggie);
+baseDeDatos.push(productoBuzoLuan);
+baseDeDatos.push(productoJoggerTiny);
+baseDeDatos.push(productoRemeraLuan);
+baseDeDatos.push(productoBaberoBeni);
+baseDeDatos.push(productoSaquitoVeggie);
 
 let aux = ``
 for(let i = 0; i < baseDeDatos.length; i++) {
@@ -37,8 +47,7 @@ for(let i = 0; i < baseDeDatos.length; i++) {
                         ${baseDeDatos[i].descripcion}
                         <br>
                         <br>
-                        Precio: <strong>${baseDeDatos[i].precio}</strong></p>
-                        <p>Cantidad: <strong>${baseDeDatos[i].stock}</strong></p>
+                        Precio: <strong>$${baseDeDatos[i].precio}</strong></p>
                         <div class="card-footer">
                         <button class="btn btn-primary" style="width:100%" 
                         onclick='agregarProducto(${JSON.stringify(
@@ -49,7 +58,6 @@ for(let i = 0; i < baseDeDatos.length; i++) {
                 </div> `
     }
 }
-
 document.getElementById('productos1').innerHTML = aux;
 
 // carrito funcionamiento
@@ -64,35 +72,3 @@ function agregarProducto(productos) {
 
     document.getElementById('contador').innerHTML = carrito.length;
 }
-
-function borrarProducto(){
-    const nuevoCarrito = [];
-    for(let i = 0; i < carrito.length; i++){
-        if(i != 1){
-            nuevoCarrito.push(carrito[i]);
-        }
-    }
-    localStorage.setItem('carrito',JSON.stringify(nuevoCarrito));
-    carrito = nuevoCarrito;
-    document.getElementById('contador').innerHTML = carrito.length;
-}
-
-// let mostrarEnCarrito = [{
-//                             nombre:'Body Tiny', 
-//                             descripcion:'Body rayado con cartera y puños a contratono Composición Tejido: jersey rayado 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.', 
-//                             precio: '$800', 
-//                             imagen: 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213275_aero-900x900.jpg'
-//                         },
-                        
-//                         {
-//                             nombre:'Body Veggie',
-//                             descripcion:'Body estampado por metro "verduras" sobre jersey con puños en color.Composición Tejido: jersey estampado por metro 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.',
-//                             precio:'$700',
-//                             imagen:'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213209_kaki-900x900.jpg'
-//                         },
-//                         {
-//                             nombre:'Pantalon Veggie',
-//                             descripcion:'Mini babucha con puños, ideal para medio tiempo. Composición Tejido: reeb 24/1, 100% algodón',
-//                             precio:'$700',
-//                             imagen:'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213209_kaki-900x900.jpg'
-//                         }]
