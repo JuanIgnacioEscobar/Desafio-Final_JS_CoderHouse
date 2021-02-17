@@ -72,3 +72,14 @@ function agregarProducto(productos) {
 
     document.getElementById('contador').innerHTML = carrito.length;
 }
+
+// desafio agregar jquery
+$('#btn-jquery').click (function() {
+    let inputName = $('#inputName').val();
+    let inputApellido = $('#inputApellido').val();
+    if(inputName && inputApellido) { 
+    $('#texto').html('<h5>Bienvenido '+'<br/>'+inputName+'<br/>'+inputApellido+'</h5>') 
+    }else{
+        alert('debes completar todos los datos');
+    }
+})
