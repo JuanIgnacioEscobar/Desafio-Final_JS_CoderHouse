@@ -1,0 +1,134 @@
+{
+    "pagM12": [
+        {
+            "nombre": "Conjunto Otto",
+            "id": 9,
+            "descripcion": "Conjunto body cuello americano estampado hojitas + ranita de plush.",
+            "precio": 1900,
+            "stock": 10,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/211510_talapaya-900x900.jpg"
+        },
+        {
+            "nombre": "Mini buzo Nita",
+            "id": 10,
+            "descripcion": "Mini buzo manga ranglan, con botones en la espalda.",
+            "precio": 1200,
+            "stock": 15,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/214500_talampaya-900x900.jpg"
+        },
+        {
+            "nombre": "Body Nita",
+            "id": 11,
+            "descripcion": "Body cuello americano, con collareta a contratono y estampado central con relieve.",
+            "precio": 900,
+            "stock": 5,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/215602_cemento-900x900.jpg"
+        },
+        {
+            "nombre": "Babucha Nita",
+            "id": 12,
+            "descripcion": "Mini babucha con bolsillo canguro y puños.",
+            "precio": 900,
+            "stock": 5,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/214501_talampaya-900x900.jpg"
+        },
+        {
+            "nombre": "Babucha Nita",
+            "id": 12,
+            "descripcion": "Mini babucha con bolsillo canguro y puños.",
+            "precio": 900,
+            "stock": 5,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/214501_talampaya-900x900.jpg"
+        },
+        {
+            "nombre": "Enterito Jaime",
+            "id": 13,
+            "descripcion": "Enterito abrochado adelante con un pequeño bordado lateral.",
+            "precio": 2000,
+            "stock": 7,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/211500_marron-900x900.jpg"
+        },
+        {
+            "nombre": "Body Tori",
+            "id": 14,
+            "descripcion": "Body básico de morley, se adapta a la anatomía del cuerpo, con cartera y botones.",
+            "precio": 1200,
+            "stock": 5,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/215632_marron-900x900.jpg"
+        },
+        {
+            "nombre": "Cardigan Milo",
+            "id": 15,
+            "descripcion": "Cardigan rayado con cartera contratono.",
+            "precio": 1200,
+            "stock": 9,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2020/Verano/203220_gris-900x900.jpg"
+        }
+    ],
+    "pagM36": [
+        {
+            "nombre": "Pantalon Lito",
+            "id": 17,
+            "descripcion": "Pantalón con bolsillos, de frisa, colores lisos, con puños tejidos en composse.",
+            "precio": 1100,
+            "stock": 8,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/214103_marron-900x900.jpg"
+        },
+        {
+            "nombre": "Remera Tori",
+            "id": 18,
+            "descripcion": "Remera en morley tipo camiseta, cuello con cartera y botones.",
+            "precio": 1200,
+            "stock": 5,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/215631_talampaya-900x900.jpg"
+        },
+        {
+            "nombre": "Remera Mirko",
+            "id": 19,
+            "descripcion": "Remera manga corta y cuello con cartera y botones.",
+            "precio": 800,
+            "stock": 7,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213273_negro-900x900.jpg"
+        },
+        {
+            "nombre": "Jogger Luan",
+            "id": 20,
+            "descripcion": "Pantalón Jogging rustico, con bolsillos y puños.",
+            "precio": 860,
+            "stock": 9,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211805_aero-900x900.jpg"
+        },
+        {
+            "nombre": "Remera Tomy",
+            "id": 21,
+            "descripcion": "Remera rayada, con cuello redondo.",
+            "precio": 900,
+            "stock": 5,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/215650_marron-900x900.jpg"
+        },
+        {
+            "nombre": "Buzo Lito",
+            "id": 22,
+            "descripcion": "Buzo cuello redondo, de frisa, colores lisos, con puños tejidos en composse.",
+            "precio": 1500,
+            "stock": 5,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/214102_marron-900x900.jpg"
+        },
+        {
+            "nombre": "Buzo Aurora",
+            "id": 23,
+            "descripcion": "Buzo de rustico, combinado, con capucha forrada cuello con cartera y broches.",
+            "precio": 1200,
+            "stock": 4,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211802_rosa-900x900.jpg"
+        },
+        {
+            "nombre": "Buzo Luana",
+            "id": 24,
+            "descripcion": "Buzo manga ranglan con lunares estampados y nudo en la cintura.",
+            "precio": 1600,
+            "stock": 6,
+            "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Invierno/214112_marron-900x900.jpg"
+        }
+    ]
+}

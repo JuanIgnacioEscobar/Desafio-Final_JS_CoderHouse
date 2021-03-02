@@ -1,0 +1,66 @@
+[
+    {
+        "nombre": "Body Tiny",
+        "id":1,
+        "descripcion": "Body rayado con cartera y puños a contratono.",
+        "precio": 800,
+        "stock": 10,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213275_aero-900x900.jpg"
+    },
+    {
+        "nombre": "Body Veggie",
+        "id":2,
+        "descripcion": "Body estampado por metro 'verduras' sobre jersey con puños en color.",
+        "precio": 700,
+        "stock": 3,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213200_kaki-400x400.jpg"
+    },
+    {
+        "nombre": "Pant Veggie",
+        "id":3,
+        "descripcion": "Mini babucha con puños, ideal para medio tiempo.",
+        "precio": 700,
+        "stock": 20,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213209_kaki-900x900.jpg"
+    },
+    {
+        "nombre": "Buzo Luan",
+        "id":4,
+        "descripcion": "Buzo de rustico, combinado, con capucha forrada cuello con cartera y broches, ideal para medio tiempo.",
+        "precio": 1000,
+        "stock": 12,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211804_kaki-900x900.jpg"
+    },
+    {
+        "nombre": "Jogger Tiny",
+        "id":5,
+        "descripcion": "Jogger towel con alforzas, bolsillos y puños.",
+        "precio": 800,
+        "stock": 20,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211904_verde-900x900.jpg"
+    },
+    {
+        "nombre": "Remera Luan",
+        "id":6,
+        "descripcion": "Remera con puños a contratono, con gran estampa.",
+        "precio": 700,
+        "stock": 15,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213262_verde-900x900.jpg"
+    },
+    {
+        "nombre": "Babero Beni",
+        "id":7,
+        "descripcion": "Babero de algodón estampado con colareta a contra tono.",
+        "precio": 500,
+        "stock": 5,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2020/Invierno/205606_verde-900x900.jpg"
+    },
+    {
+        "nombre": "Saquito Veggie",
+        "id":8,
+        "descripcion": "Mini saquito estampado verduras por metro sobre jersey con capucha forrada.",
+        "precio": 900,
+        "stock": 11,
+        "imagen":"https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213202_kaki-900x900.jpg"
+    }
+]

@@ -55,9 +55,6 @@ body{
     text-decoration: none;
 }
 /* card */
-#productos1{
-    margin-top: 30px;
-}
 .titulo-card{
     text-align: center;
 }
@@ -66,7 +63,9 @@ body{
     border-color: #fafafa;
 }
 .btn-primary:focus{
+    border: none;
     box-shadow: none;
+    outline: none;
 }
 .card-footer {
     padding: 0;
@@ -97,7 +96,9 @@ body{
     color: black;
 }
 .card{
-    margin-top: 30px;
+    margin-top: 20px;
+    width: 18rem;
+    margin-left: 30px;
 }
 .btn-primary:hover {
     color: #fff; 
@@ -108,4 +109,36 @@ body{
 .pruebaJquery{
     text-align: center;
     margin-top: 20px;
+}
+/* pag m12 */
+#m12{
+    display: none;
+    flex-wrap: wrap;
+}
+/* pag m36 */
+#m36{
+    display: none;
+    flex-wrap: wrap;
+}
+/* procesar compra */
+#procesarCompra{
+    display: none;
+    flex-wrap: wrap;
+}
+
+/* ------------------ */
+
+footer {
+    background-color: #555;
+    margin-top: 100px; 
+}
+.conocenos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.contactos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }

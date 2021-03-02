@@ -1,85 +1,204 @@
-let carrito = [];
-if (localStorage.getItem('carrito') !=null) {
-    carrito = JSON.parse(localStorage.getItem('carrito'));
-    document.getElementById('contador').innerHTML = carrito.length;
-}
-class Producto{
-    constructor(nombreProducto, nombreDescripcion, precioProducto, stockProducto, imagenProducto){
-        this.nombre = nombreProducto;
-        this.descripcion = nombreDescripcion;
-        this.precio = precioProducto;
-        this.stock = stockProducto;
-        this.imagen = imagenProducto;
-    }
-    mostrarProductos(){
-        document.getElementById('carrito').innerHTML = ``;
-    }
-}
-
-let ProductoBodyTiny = new Producto('Body Tiny','Body rayado con cartera y puños a contratono Composición Tejido: jersey rayado 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.', 800, 10, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213275_aero-900x900.jpg')
-let ProductoBodyVeggie = new Producto('Body Veggie','Body estampado por metro "verduras" sobre jersey con puños en color.Composición Tejido: jersey estampado por metro 24/1 peinado 100% algodón.Composición Tejido puños: reeb color 24/1 peinado 100% algodón.', 700, 3,'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213200_kaki-400x400.jpg')
-let productoPantVeggie = new Producto('Pantalon Veggie', 'Mini babucha con puños, ideal para medio tiempo. Composición Tejido: reeb 24/1, 100% algodón', 700, 20, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213209_kaki-900x900.jpg')
-let productoBuzoLuan = new Producto('Buzo Luan', 'Buzo de rustico, combinado, con capucha forrada cuello con cartera y broches, ideal para medio tiempo, super cancheros. Composición Tejido: rustico color 100% algodón.', 1000, 12, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211804_kaki-900x900.jpg')
-let productoJoggerTiny = new Producto('Jogger Tiny', 'Jogger towel con alforzas, bolsillos y puños. Composición Tejido: towell, 100% algodón', 800, 20, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/211904_verde-900x900.jpg')
-let productoRemeraLuan = new Producto('Remera Luan', 'Remera con puños a contratono, con gran estampa. Composición Tejido: jersey color 100% algodón.', 700, 15, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213262_verde-900x900.jpg')
-let productoBaberoBeni = new Producto('Babero Beni', 'Babero de algodón estampado con colareta a contra tono.', 500, 5, 'https://tienda.pachibebes.com/image/cache/catalog/2020/Invierno/205606_verde-900x900.jpg')
-let productoSaquitoVeggie = new Producto('Saquito Veggie', 'Mini saquito estampado verduras por metro sobre jersey con capucha forrada.', 900, 11, 'https://tienda.pachibebes.com/image/cache/catalog/2021/Verano/213202_kaki-900x900.jpg')
-
-let baseDeDatos = [];
-baseDeDatos.push(ProductoBodyTiny);
-baseDeDatos.push(ProductoBodyVeggie);
-baseDeDatos.push(productoPantVeggie);
-baseDeDatos.push(productoBuzoLuan);
-baseDeDatos.push(productoJoggerTiny);
-baseDeDatos.push(productoRemeraLuan);
-baseDeDatos.push(productoBaberoBeni);
-baseDeDatos.push(productoSaquitoVeggie);
-
-let aux = ``
-for(let i = 0; i < baseDeDatos.length; i++) {
-    if (baseDeDatos[i].stock > 0) {
-        aux +=`
-        <div class="card" style="width: 18rem;">
-                    <img src="${baseDeDatos[i].imagen}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title titulo-card">${baseDeDatos[i].nombre}</h5>
-                    <p class="card-text descripcion1">
-                        ${baseDeDatos[i].descripcion}
-                        <br>
-                        <br>
-                        Precio: <strong>$${baseDeDatos[i].precio}</strong></p>
-                        <div class="card-footer">
-                        <button class="btn btn-primary" style="width:100%" 
-                        onclick='agregarProducto(${JSON.stringify(
-                        baseDeDatos[i]
-                        )})'>Agregar al carrito</button>
-                        </div>
-                </div>
-                </div> `
-    }
-}
-document.getElementById('productos1').innerHTML = aux;
-
-// carrito funcionamiento
-function agregarProducto(productos) {
-    carrito.push(productos)
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    
-    let aux = 0;
-    for(let i = 0; i < carrito.length; i++){
-        aux += carrito[i].precio;
-    }
-
-    document.getElementById('contador').innerHTML = carrito.length;
-}
-
 // desafio agregar jquery
 $('#btn-jquery').click (function() {
     let inputName = $('#inputName').val();
     let inputApellido = $('#inputApellido').val();
     if(inputName && inputApellido) { 
-    $('#texto').html('<h5>Bienvenido '+'<br/>'+inputName+'<br/>'+inputApellido+'</h5>') 
+    $('#texto').slideDown(1000).html('<h5>Bienvenido '+'<br/>'+inputName+'<br/>'+inputApellido+'</h5>');  
     }else{
         alert('debes completar todos los datos');
     }
-})
+});
+
+const pagM12 = document.getElementById('m12');
+const pagM36 = document.getElementById('m36');
+const productos = document.getElementById('productos');
+const items = document.getElementById('items');
+const footerTotal = document.getElementById('footerTotal')
+const card = document.getElementById('cardTemplate').content;
+const mostrarCarrito = document.getElementById('mostrarCarrito').content
+const mostrarCarritoFooter = document.getElementById('mostrarCarritoFooter').content
+const fragment = document.createDocumentFragment();
+let carrito = {};
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData();
+    if(localStorage.getItem('carrito')) {
+        carrito = JSON.parse(localStorage.getItem('carrito'));
+        mostrarEnCarrito();
+    }
+});
+productos.addEventListener('click', (e) => {
+    agregarCarrito(e);
+});
+pagM12.addEventListener('click', (e) => {
+    agregarCarrito(e);
+});
+pagM36.addEventListener('click', (e) => {
+    agregarCarrito(e);
+});
+items.addEventListener('click', e => {
+    btnAccion(e);
+});
+
+const fetchData = async () => {
+    try {
+        const res = await fetch('productos.json');
+        const data = await res.json();
+        cards(data);
+    } catch (error) {
+        console.log('error');
+    }
+}
+
+const cards = data => {
+    data.forEach(producto => {
+        card.querySelector('img').setAttribute('src', producto.imagen); 
+        card.querySelector('h5').textContent = producto.nombre;
+        card.querySelector('.descripcion').textContent = producto.descripcion;
+        card.querySelector('.precio strong').textContent = producto.precio;
+        card.querySelector('.btn-primary').dataset.id = producto.id;
+        const clone = card.cloneNode(true);
+        fragment.appendChild(clone);
+    });
+    productos.appendChild(fragment);
+}
+
+const agregarCarrito = (e) => {
+    if(e.target.classList.contains('btn-primary')) {
+        setCarrito(e.target.parentElement);
+    }
+    e.stopPropagation(); //sirve para detener cualquier otro evento que se puede generar en productos
+}
+
+const setCarrito = objeto => {
+    const producto = {
+        id: objeto.querySelector('.btn-primary').dataset.id,
+        nombre: objeto.querySelector('h5').textContent,
+        precio: objeto.querySelector('.precio strong').textContent,
+        cantidad: 1
+    }
+    if(carrito.hasOwnProperty(producto.id)) { //hasOwnProperty indica si el objeto tiene la propiedad especificada
+        producto.cantidad = carrito[producto.id].cantidad + 1; 
+    }
+
+    carrito[producto.id] = {...producto};
+    mostrarEnCarrito();
+}
+
+const mostrarEnCarrito = () => {
+    items.innerHTML = ``;
+    Object.values(carrito).forEach(producto => {
+        mostrarCarrito.querySelector('.nombreProd').textContent = producto.nombre;
+        mostrarCarrito.querySelector('.cantidadProd').textContent = producto.cantidad;
+        mostrarCarrito.querySelector('.btn-info').dataset.id = producto.id;
+        mostrarCarrito.querySelector('.btn-danger').dataset.id = producto.id;
+        mostrarCarrito.querySelector('.precioProd span').textContent = producto.cantidad * producto.precio;
+
+        const clone = mostrarCarrito.cloneNode(true);
+        fragment.appendChild(clone);
+    })
+    items.appendChild(fragment);
+    mostrarFooterCarrito();
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+const mostrarFooterCarrito = () => {
+    footerTotal.innerHTML = ``;
+    if(Object.keys(carrito).length === 0) {
+        footerTotal.innerHTML = `
+        <th class="row footerTotal" colspan="5">Aún no hay productos añadidos 😕</th>
+        `;
+        return;
+    }
+
+    const todasLasCantidades = Object.values(carrito).reduce((acumular, {cantidad}) => acumular + cantidad,0);
+    const todosLosPrecios = Object.values(carrito).reduce((acumular,{cantidad, precio}) => acumular + cantidad * precio,0);
+
+    mostrarCarritoFooter.querySelectorAll('.totalProd').textContent = todasLasCantidades;
+    mostrarCarritoFooter.querySelector('span').textContent = todosLosPrecios;
+
+    const clone = mostrarCarritoFooter.cloneNode(true);
+    fragment.appendChild(clone);
+    footerTotal.appendChild(fragment);
+
+    const btnVaciar = document.getElementById('vaciar-carrito');
+    btnVaciar.addEventListener('click', () => {
+        carrito = {}
+        mostrarEnCarrito();
+    })
+}
+
+const btnAccion = e => {
+    if(e.target.classList.contains('btn-info')) {
+        carrito[e.target.dataset.id]
+        const producto = carrito[e.target.dataset.id];
+        producto.cantidad = carrito[e.target.dataset.id].cantidad + 1;
+        carrito[e.target.dataset.id] = {...producto};
+        mostrarEnCarrito();
+    }
+    if(e.target.classList.contains('btn-danger')) {
+        const producto = carrito[e.target.dataset.id];
+        producto.cantidad = carrito[e.target.dataset.id].cantidad - 1;
+        if(producto.cantidad === 0) {
+            delete carrito[e.target.dataset.id];
+        }
+        mostrarEnCarrito();
+    }
+    e.stopPropagation();
+}
+// pagina 12 meses
+const mostrarPagM12 = () => {
+    pagM12.style.display = 'flex';
+    pagM36.style.display = 'none';
+    productos.style.display = 'none';
+}
+
+fetch('otrosProductos.json')
+.then(res => 
+    res.json()
+).then(res => {
+    let m12 = ``;
+    for(let i = 0; i < (res.pagM12).length; i++) {
+        m12 +=`
+        <div class="card">
+                    <div class="card-body">
+                    <img src="${(res.pagM12[i]).imagen}" class="card-img-top">
+                    <h5 class="card-title titulo-card">${(res.pagM12[i]).nombre}</h5>
+                    <p class="card-text descripcion">${(res.pagM12[i]).descripcion}</p>
+                    <p class="precio"><strong>${(res.pagM12[i]).precio}</strong></p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+                </div> 
+        `;
+    }
+    document.getElementById('m12').innerHTML = m12;
+});
+
+// pagina 36 meses
+const mostrarPagM36 = () => {
+    pagM36.style.display = 'flex';
+    pagM12.style.display = 'none';
+    productos.style.display = 'none';
+}
+
+fetch('otrosProductos.json')
+.then(res => 
+    res.json()
+).then(res => {
+    let m36 = ``;
+    for(let i = 0; i < (res.pagM36).length; i++) {
+        m36 +=`
+        <div class="card">
+                    <div class="card-body">
+                    <img src="${(res.pagM36[i]).imagen}" class="card-img-top">
+                    <h5 class="card-title titulo-card">${(res.pagM36[i]).nombre}</h5>
+                    <p class="card-text descripcion">${(res.pagM36[i]).descripcion}</p>
+                    <p class="precio"><strong>${(res.pagM36[i]).precio}</strong></p>
+                        <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+                </div>
+        `;
+    }
+    document.getElementById('m36').innerHTML = m36;
+});
