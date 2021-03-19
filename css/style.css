@@ -1,5 +1,14 @@
 body{
     background-color: rgb(238, 237, 237);
+    /* background-color: #555; */
+}
+.row{
+    --bs-gutter-x: 0;
+}
+.btn{
+    text-transform: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 .buscador{
     margin-right: 110px;
@@ -33,7 +42,7 @@ body{
 /* submenu */
 .subMenu{
     margin-top: -30px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .subMenu li{
     display: inline-block;
@@ -43,18 +52,25 @@ body{
     color: black;
 }
 /* info tienda */
+.infoArreglo{
+    align-items: center;
+}
 .info{
     background-color: #E0E0E0;
     height: 50px;
     display: flex;
     justify-content: space-evenly;
     font-size: 33px;
+    margin-left: 30px;
 }
 .info a{
     color: #555;
     text-decoration: none;
 }
 /* card */
+#productos{
+    justify-content: center;
+}
 .titulo-card{
     text-align: center;
 }
@@ -78,7 +94,6 @@ body{
     margin: 25px;
 }
 #btn-carrito{
-    margin-top: 2px;
     background: none;
     border: none;
     color: #fafafa;
@@ -114,22 +129,24 @@ body{
 #m12{
     display: none;
     flex-wrap: wrap;
+    justify-content: center;
 }
 /* pag m36 */
 #m36{
     display: none;
     flex-wrap: wrap;
+    justify-content: center;
 }
 /* procesar compra */
 #procesarCompra{
     display: none;
     flex-wrap: wrap;
+    justify-content: center;
 }
-
-/* ------------------ */
-
+/* footer */
 footer {
-    background-color: #555;
+    color: white;
+    background-color: black;
     margin-top: 100px; 
 }
 .conocenos{

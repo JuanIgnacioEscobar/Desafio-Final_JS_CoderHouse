@@ -1,14 +1,3 @@
-// desafio agregar jquery
-$('#btn-jquery').click (function() {
-    let inputName = $('#inputName').val();
-    let inputApellido = $('#inputApellido').val();
-    if(inputName && inputApellido) { 
-    $('#texto').slideDown(1000).html('<h5>Bienvenido '+'<br/>'+inputName+'<br/>'+inputApellido+'</h5>');  
-    }else{
-        alert('debes completar todos los datos');
-    }
-});
-
 const pagM12 = document.getElementById('m12');
 const pagM36 = document.getElementById('m36');
 const productos = document.getElementById('productos');
@@ -19,6 +8,10 @@ const mostrarCarrito = document.getElementById('mostrarCarrito').content
 const mostrarCarritoFooter = document.getElementById('mostrarCarritoFooter').content
 const fragment = document.createDocumentFragment();
 let carrito = {};
+
+$('#btnCompra').click(function() {
+    alert('tu compra se ha completado con exito!')
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
@@ -36,7 +29,7 @@ pagM12.addEventListener('click', (e) => {
 pagM36.addEventListener('click', (e) => {
     agregarCarrito(e);
 });
-items.addEventListener('click', e => {
+items.addEventListener('click', (e) => {
     btnAccion(e);
 });
 
@@ -152,6 +145,7 @@ const mostrarPagM12 = () => {
     pagM12.style.display = 'flex';
     pagM36.style.display = 'none';
     productos.style.display = 'none';
+    procesarCompra.style.display = 'none'
 }
 
 fetch('otrosProductos.json')
@@ -180,6 +174,7 @@ const mostrarPagM36 = () => {
     pagM36.style.display = 'flex';
     pagM12.style.display = 'none';
     productos.style.display = 'none';
+    procesarCompra.style.display = 'none'
 }
 
 fetch('otrosProductos.json')
@@ -190,14 +185,14 @@ fetch('otrosProductos.json')
     for(let i = 0; i < (res.pagM36).length; i++) {
         m36 +=`
         <div class="card">
-                    <div class="card-body">
-                    <img src="${(res.pagM36[i]).imagen}" class="card-img-top">
-                    <h5 class="card-title titulo-card">${(res.pagM36[i]).nombre}</h5>
-                    <p class="card-text descripcion">${(res.pagM36[i]).descripcion}</p>
-                    <p class="precio"><strong>${(res.pagM36[i]).precio}</strong></p>
-                        <button class="btn btn-primary">Agregar al carrito</button>
-                </div>
-                </div>
+            <div class="card-body">
+                <img src="${(res.pagM36[i]).imagen}" class="card-img-top">
+                <h5 class="card-title titulo-card">${(res.pagM36[i]).nombre}</h5>
+                <p class="card-text descripcion">${(res.pagM36[i]).descripcion}</p>
+                <p class="precio"><strong>${(res.pagM36[i]).precio}</strong></p>
+                <button class="btn btn-primary">Agregar al carrito</button>
+            </div>
+        </div>
         `;
     }
     document.getElementById('m36').innerHTML = m36;
